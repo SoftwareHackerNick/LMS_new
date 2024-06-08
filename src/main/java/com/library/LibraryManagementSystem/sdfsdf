@@ -1,0 +1,48 @@
+case 2:{
+	    			em.getTransaction().begin();
+	    			
+	    			
+	    			System.out.println("Enter Owner Id: ");
+	    			int id=sc.nextInt();
+	    			
+	    			Owner obj=em.find(Owner.class, id);
+	    			
+	    			System.out.println("Enter Owner Name: ");
+	    			String name=sc.next();
+	    			
+	    			System.out.println("Enter Owner Location: ");
+	    			String Location=sc.next();
+	    			
+	    			System.out.println("Enter Owner Income: ");
+	    			int income=sc.nextInt();
+	    			
+	    			obj.setName(name);
+	    			obj.setLocation(Location);
+	    			obj.setIncome(income);
+	    			em.persist(obj);
+	    			
+	    			em.getTransaction().commit();
+	    			break;
+	    		}
+	    		case 3:{
+	    			System.out.println("Enter Owner Id: ");
+	    			int id=sc.nextInt();
+	    			
+	    			Owner obj=em.find(Owner.class, id);
+	    			System.out.println(obj);
+	    			
+	    			
+	    			
+	    			break;
+	    		}
+	    		case 4:{
+	    			em.getTransaction().begin();
+	    			
+	    			System.out.println("Enter Owner Id: ");
+	    			int id=sc.nextInt();
+	    			
+	    			Owner obj=em.find(Owner.class, id);
+	    			em.remove(obj);
+	    			em.getTransaction().commit();
+	    			break;
+	    		}
